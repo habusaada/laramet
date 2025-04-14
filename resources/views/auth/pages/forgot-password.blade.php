@@ -1,0 +1,143 @@
+@extends('auth.authLayout')
+
+@section('title')
+    <title>{{ config('app.name') }} | {{ $data['options']['page_title'] }}</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
+
+@section('stylesheet')
+@endsection
+
+@section('body')
+    <div class="p-10 d-flex flex-column flex-lg-row-fluid w-lg-50">
+        <!--begin::Form-->
+        <div class="d-flex flex-center flex-column flex-lg-row-fluid">
+            <!--begin::Wrapper-->
+            <div class="p-10 w-lg-500px">
+                {{-- <!-- Session Status -->
+                <x-auth-session-status class="mb-4" :status="session('status')" /> --}}
+                <!--begin::Form-->
+                {{ html()->form('POST', route('password.email'))->attributes(['data-parsley-validate' => '', 'enctype' => 'multipart/form-data'])->open() }}
+                <!--begin::Heading-->
+                <div class="text-center mb-10">
+                    <!--begin::Title-->
+                    <h1 class="text-gray-900 fw-bolder mb-3">Forgot Password ?</h1>
+                    <!--end::Title-->
+                    <!--begin::Link-->
+                    <div class="text-gray-500 fw-semibold fs-6">Enter your email to reset your password.</div>
+                    <!--end::Link-->
+                </div>
+                <!--begin::Heading-->
+                <!--begin::Input group=-->
+                <div class="fv-row mb-8">
+                    <!--begin::Email-->
+                    <input type="text" placeholder="Email" name="email" autocomplete="off"
+                        class="form-control bg-transparent" :value="old('email')" required autofocus />
+                    <!--end::Email-->
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                </div>
+                <!--begin::Actions-->
+                <div class="d-flex flex-wrap justify-content-center pb-lg-0">
+                    <button type="submit" id="kt_password_reset_submit" class="btn btn-primary me-4">
+                        <!--begin::Indicator label-->
+                        <span class="indicator-label">Submit</span>
+                        <!--end::Indicator label-->
+                        <!--begin::Indicator progress-->
+                        <span class="indicator-progress">Please wait...
+                            <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                        <!--end::Indicator progress-->
+                    </button>
+                    <a href="{{ url()->previous() }}" class="btn btn-light">Cancel</a>
+                </div>
+                <!--end::Actions-->
+                </form>
+                <!--end::Form-->
+            </div>
+            <!--end::Wrapper-->
+        </div>
+        <!--end::Form-->
+        <!--begin::Footer-->
+        <div class="px-10 mx-auto w-lg-500px d-flex flex-stack">
+            <!--begin::Languages-->
+            <div class="me-10">
+                <!--begin::Toggle-->
+                <button class="btn btn-flex btn-link btn-color-gray-700 btn-active-color-primary rotate fs-base"
+                    data-kt-menu-trigger="click" data-kt-menu-placement="bottom-start" data-kt-menu-offset="0px, 0px">
+                    <span data-kt-element="current-lang-name" class="me-1">English</span>
+                    <span class="rotate-180 d-flex flex-center">
+                        <i class="m-0 ki-duotone ki-down fs-5 text-muted"></i>
+                    </span>
+                </button>
+                <!--end::Toggle-->
+                <!--begin::Menu-->
+                <div class="py-4 menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold w-200px fs-7"
+                    data-kt-menu="true" id="kt_auth_lang_menu">
+                    <!--begin::Menu item-->
+                    <div class="px-3 menu-item">
+                        <a href="#" class="px-5 menu-link d-flex" data-kt-lang="English">
+                            <span data-kt-element="lang-name">English</span>
+                        </a>
+                    </div>
+                    <!--end::Menu item-->
+                    <!--begin::Menu item-->
+                    <div class="px-3 menu-item">
+                        <a href="#" class="px-5 menu-link d-flex" data-kt-lang="Spanish">
+                            <span data-kt-element="lang-name">Spanish</span>
+                        </a>
+                    </div>
+                    <!--end::Menu item-->
+                    <!--begin::Menu item-->
+                    <div class="px-3 menu-item">
+                        <a href="#" class="px-5 menu-link d-flex" data-kt-lang="German">
+                            <span data-kt-element="lang-name">German</span>
+                        </a>
+                    </div>
+                    <!--end::Menu item-->
+                    <!--begin::Menu item-->
+                    <div class="px-3 menu-item">
+                        <a href="#" class="px-5 menu-link d-flex" data-kt-lang="Japanese">
+                            <span data-kt-element="lang-name">Japanese</span>
+                        </a>
+                    </div>
+                    <!--end::Menu item-->
+                    <!--begin::Menu item-->
+                    <div class="px-3 menu-item">
+                        <a href="#" class="px-5 menu-link d-flex" data-kt-lang="French">
+                            <span data-kt-element="lang-name">French</span>
+                        </a>
+                    </div>
+                    <!--end::Menu item-->
+                </div>
+                <!--end::Menu-->
+            </div>
+            <!--end::Languages-->
+            <!--begin::Links-->
+            <div class="gap-5 d-flex fw-semibold text-primary fs-base">
+                <a href="pages/contact.html" target="_blank">Contact Us</a>
+            </div>
+            <!--end::Links-->
+        </div>
+        <!--end::Footer-->
+    </div>
+@endsection
+
+@if (session('status'))
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            Swal.fire({
+                icon: 'success',
+                title: '<strong>Password Reset Link Sent</strong>',
+                text: @json(session('status')),
+                confirmButtonColor: '#1C3A74',
+                confirmButtonText: 'Done',
+                customClass: {
+                    confirmButton: "btn btn-primary"
+                }
+            });
+        });
+    </script>
+@endif
+
+@section('javascript')
+@endsection

@@ -1,0 +1,119 @@
+//
+// To make future updates easier consider overriding the global variables from _variables.bootstrap.scss and _variables.custom.scss for current demo in this file.
+// Note that this file is included first and variables defined in _variables.bootstrap.scss and _variables.custom.scss
+// are not accessible in this file but you can override any global variable as shown below:
+//
+
+
+
+
+// Bootstrap color system
+$white: #ffffff !default;
+$black:#000000 !default;
+
+// Bootstrap grey colors
+$gray-100: #F9F9F9 !default;
+$gray-200: #F1F1F4 !default;
+$gray-300: #DBDFE9 !default;
+$gray-400: #C4CADA !default;
+$gray-500: #99A1B7 !default;
+$gray-600: #78829D !default;
+$gray-700: #4B5675 !default;
+$gray-800: #252F4A !default;
+$gray-900: #071437 !default;
+
+// Bootstrap muted color
+$text-muted: $gray-500 !default;
+
+// Bootstrap gray colors map
+$grays: (
+	"100": $gray-100,
+	"200": $gray-200,
+	"300": $gray-300,
+	"400": $gray-400,
+	"500": $gray-500,
+	"600": $gray-600,
+	"700": $gray-700,
+	"800": $gray-800,
+	"900": $gray-900
+) !default;
+
+$app-bg-color: #FFFFFF;
+
+// Bootstrap contextual colors
+// Primary colors
+$primary:						#1C3A74 !default;
+$primary-active:				#264F9D !default;
+$primary-light: 				#DCEDFD !default;
+$primary-clarity: 				rgba(#1C3A74, 0.2) !default;
+$primary-inverse: 				$white !default;
+
+// Secondary colors
+$secondary: 					$gray-200 !default;
+$secondary-active: 				$gray-400 !default;
+$secondary-light: 				#F9F9F9 !default;
+$secondary-clarity:				rgba(#F9F9F9, 0.2) !default;
+$secondary-inverse:				$gray-800 !default;
+
+// Light colors
+$light: 						$gray-100 !default;
+$light-active: 					$gray-200 !default;
+$light-light: 					#ffffff !default;
+$light-clarity: 				rgba($white, 0.2) !default;
+$light-inverse:					$gray-800 !default;
+
+// // Success colors
+// $success: 						#50CD89 !default;
+// $success-active: 				#34B66F !default;
+// $success-light: 				#E8FFF3 !default;
+// $success-clarity: 				rgba(#50CD89, 0.2) !default;
+// $success-inverse: 				$white !default;
+
+// // Info colors
+// $info: 							#59B2FF !default;
+// $info-active: 					#269AFF !default;
+// $info-light: 					#CFE5FF !default;
+// $info-clarity: 					rgba(#59B2FF, 0.2) !default;
+// $info-inverse: 					$white !default;
+
+// // Warning colors
+// $warning: 						#F6C000 !default;
+// $warning-active: 				#FFD02A !default;
+// $warning-light: 				#FEEA9C !default;
+// $warning-clarity: 				rgba(#F6C000, 0.2) !default;
+// $warning-inverse: 				$white !default;
+
+// // Danger colors
+// $danger: 						#F1416C !default;
+// $danger-active: 				#EE1247 !default;
+// $danger-light: 					#FFCBDB !default;
+// $danger-clarity: 				rgba(#F1416C, 0.2) !default;
+// $danger-inverse: 				$white !default;
+
+// Dark colors
+$dark: 							#3F4254 !default;
+$dark-active: 					#555971 !default;
+$dark-light: 					#F9F9F9 !default;
+$dark-clarity: 					rgba(#1E2129, 0.2) !default;
+$dark-inverse: 					$white !default;
+
+
+
+// Bootstrap grey colors
+$gray-100: #F9F9F9 !default;
+$gray-200: #DEE2E6 !default;
+$gray-300: #F2F2F2 !default;
+$gray-400: #F1F1F2 !default;
+$gray-500: #E1E3EA !default;
+$gray-600: #A1A5B7 !default;
+$gray-700: #4B5675 !default;
+$gray-800: #252F4A !default;
+$gray-900: #071437 !default;
+
+
+.form-label {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: $primary;
+  }

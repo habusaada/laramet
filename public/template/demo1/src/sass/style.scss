@@ -1,0 +1,20 @@
+//
+// Theme style
+//
+
+// Initialize
+@import "init";
+
+// Components
+@import "components/core-components";
+@import "components/components";
+
+// Layout
+@import "layout/base/layout";
+@import "layout/layout";
+
+
+body{
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    }
